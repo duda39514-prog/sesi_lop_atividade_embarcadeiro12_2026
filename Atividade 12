@@ -1,0 +1,28 @@
+## Atividade 12 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int numeros[10];
+    int temp;
+    printf("Digite 10 numeros:\n");
+    for(int i = 0; i < 10; i++) {
+        printf("Numero %d: ", i + 1);
+        scanf("%d", &numeros[i]);
+    }
+    for(int i = 0; i < 10; i++) {
+        for(int j = i + 1; j < 10; j++) {
+            if(numeros[i] > numeros[j]) {
+            temp = numeros[i];
+            numeros[i] = numeros[j];
+           numeros[j] = temp;
+          }
+      }
+    }
+    printf("numeros em ordem decrescente:\n");
+    for(int i = 9; i >= 0; i--) {
+       printf("%d\n", numeros[i]);
+  }
+  getch();
+}
