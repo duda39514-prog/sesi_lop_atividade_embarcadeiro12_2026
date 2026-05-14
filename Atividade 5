@@ -1,0 +1,32 @@
+## Atividade 5
+
+#include <stdio.h>
+int main() {
+    int numeros;
+    int encontrado = 0;
+    int posicaoI = -1, posicaoJ = -1;
+
+    int numero[4][5] = {
+        {5, 10, 15, 20, 25},
+        {30, 35, 40, 45, 50},
+        {55, 60, 65, 70, 75},
+        {80, 85, 90, 95, 100}
+    };
+    printf("Digite um numero:\n");
+    scanf("%d", &numeros);
+    for(int i = 0; i < 4; i++) {
+        for(int j = 0; j < 5; j++) {
+            if(numero[i][j] == numeros) {
+                encontrado = 1;
+                posicaoI = i;
+                posicaoJ = j;
+            }
+        }
+    }
+    if(encontrado == 1) {
+        printf("Numero encontrado na linha %d e coluna %d\n", posicaoI, posicaoJ);
+    } else {
+        printf("Numero nao encontrado\n");
+    }
+    getch();
+}
