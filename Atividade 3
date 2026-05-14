@@ -1,0 +1,37 @@
+## Atividade 3
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main() {
+    srand(time(NULL));
+    int maior, posicaoI = 0, posicaoJ = 0;
+    int numero[4][5] = {
+        {5, 10, 15, 20, 25},
+        {30, 35, 40, 45, 50},
+        {55, 60, 65, 70, 75},
+        {80, 85, 90, 95, 100}
+    };
+    for(int i = 0; i < 5; i++) {
+        for(int j = 0; j < 4; j++) {
+            numero[i][j] = rand() % 101;
+        }
+    }
+    maior = numero[0][0];
+    printf("Matriz:\n");
+    for(int i = 0; i < 5; i++) {
+        for(int j = 0; j < 4; j++) {
+            printf("%d ", numero[i][j]);
+            if(numero[i][j] > maior) {
+                maior = numero[i][j];
+                posicaoI = i;
+                posicaoJ = j;
+            }
+        }
+        printf("\n");
+    }
+    printf("\nMaior numero: %d\n", maior);
+    printf("Posicao: %d, %d\n", posicaoI, posicaoJ);
+    getch();
+}
