@@ -1,0 +1,32 @@
+## Atividade 7
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+
+int main() {
+    int numero[4][5] = {
+        {5, 10, 15, 20, 25},
+        {30, 35, 40, 45, 50},
+        {55, 60, 65, 70, 75},
+        {80, 85, 90, 95, 100}
+    };
+    int ordem;
+    printf("Digite 1 para crescente ou 2 para decrescente:\n");
+    scanf("%d", &ordem);
+    if(ordem == 1) {
+        for(int i = 0; i < 4; i++) {
+            for(int j = 0; j < 5; j++) {
+             printf("%d ", numero[i][j]);
+         }
+      }
+    }
+    else if(ordem == 2) {
+      for(int i = 3; i >= 0; i--) {
+       for(int j = 4; j >= 0; j--) {
+         printf("%d ", numero[i][j]);
+       }
+    }
+    }
+    getch();
+}
